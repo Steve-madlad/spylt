@@ -11,6 +11,71 @@
   src: url('/fonts/ProximaNova-Regular.otf');
 }
 
+@layer utilities {
+  .flex-center {
+    @apply flex items-center justify-center;
+  }
+  .flex-between {
+    @apply flex items-center justify-between;
+  }
+  .align-center {
+    @apply flex items-center;
+  }
+  .align-start {
+    @apply flex items-start;
+  }
+  .just-start {
+    @apply flex justify-start;
+  }
+  .just-center {
+    @apply flex justify-center;
+  }
+  .just-end {
+    @apply flex justify-end;
+  }
+  .col {
+    @apply flex flex-col;
+  }
+  .col-start {
+    @apply flex flex-col items-start;
+  }
+  .col-center {
+    @apply flex flex-col items-center;
+  }
+  .col-between {
+    @apply flex flex-col justify-between;
+  }
+  .col-full-center {
+    @apply flex flex-col items-center justify-center;
+  }
+  .xy-center {
+    @apply items-center justify-center;
+  }
+  .size-screen {
+    @apply h-screen w-screen;
+  }
+  .min-size-screen {
+    @apply min-h-screen min-w-screen;
+  }
+  .cursor {
+    @apply cursor-pointer;
+  }
+  .text-dark {
+    @apply text-[#333];
+  }
+  .bg-dark {
+    @apply bg-[#333];
+  }
+  .abs-center {
+    @apply absolute left-1/2 -translate-x-1/2;
+  }
+  .card-shadow {
+    box-shadow: rgba(0, 0, 0, 0.15) 0px 2px 8px;
+  }
+  .hide-children > * {
+    display: none;
+  }
+}
 @theme inline {
   --font-heading: var(--font-sans);
   --font-sans: 'Antonio', sans-serif;
@@ -25,7 +90,7 @@
   --color-yellow-brown: #a26833;
   --color-milk-yellow: #e3d3bc;
   --color-red: #a02128;
-  --color-milk: #faeade;
+  --color-milk: var(--milk);
   --color-sidebar-ring: var(--sidebar-ring);
   --color-sidebar-border: var(--sidebar-border);
   --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
@@ -67,6 +132,7 @@
 }
 
 :root {
+  --milk: #faeade;
   --background: oklch(1 0 0);
   --foreground: oklch(0.145 0 0);
   --card: oklch(1 0 0);
