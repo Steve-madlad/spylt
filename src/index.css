@@ -320,11 +320,11 @@
       @apply md:text-center;
     }
 
-    .slider-wrapper {
+    .carousel-wrapper {
       @apply mt-0 min-h-dvh w-full md:mt-20 md:min-h-fit lg:h-dvh xl:mt-0;
 
       .flavors {
-        @apply flex h-full w-full flex-col flex-nowrap items-center gap-7 md:flex-row md:gap-24 lg:gap-52 2xl:gap-72;
+        @apply flex h-full w-full flex-col flex-nowrap items-center gap-7 md:flex-row md:gap-24 lg:gap-30 2xl:gap-40;
 
         .drinks {
           @apply absolute bottom-0 left-1/2 h-80 -translate-x-1/2 md:h-full;
