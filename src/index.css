@@ -353,7 +353,7 @@
     }
 
     .nutrition-text-scroll {
-      @apply -mt-24 rotate-[-3deg] border-[.5vw] border-[#e3d3bc] text-nowrap opacity-0 md:-mt-32;
+      @apply -mt-24 rotate-[-3deg] border-[.5vw] border-[#e3d3bc] text-nowrap opacity-0 md:-mt-28;
     }
 
     .nutrition-box {
