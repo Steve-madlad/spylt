@@ -7,6 +7,7 @@ import HeroSection from './components/HeroSection';
 import MessageSection from './components/MessageSection';
 import Navbar from './components/Navbar';
 import NutritionSection from './components/NutritionSection';
+import TestimonialSection from './components/TestimonialSection';
 
 gsap.registerPlugin(ScrollTrigger, ScrollSmoother);
 export default function App() {
@@ -27,6 +28,7 @@ export default function App() {
           <FlavorSection />
           <NutritionSection />
           <BenefitSection />
+          <TestimonialSection />
           <div className="bg-mid-brown h-screen overflow-hidden"></div>
         </div>
       </div>

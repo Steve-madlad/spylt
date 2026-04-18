@@ -15,8 +15,8 @@ type ColorVariants =
   | 'yellow';
 
 type TiltOptions = '2-cw' | '2-ccw' | '3-cw' | '3-ccw' | '6-cw' | '6-ccw';
-
 type AnimateDirection = 'ltr' | 'rtl' | 'center';
+
 export interface AnimatedTitleProps {
   title: string;
   color: ColorVariants;
@@ -62,16 +62,16 @@ const colorVariantClasses: Record<ColorVariants, string> = {
 
 const clipPathMap: Record<AnimateDirection, Record<'open' | 'close', string>> = {
   ltr: {
-    close: 'polygon(0 0, 0 0, 0 100%, 0 100%)',
     open: 'polygon(0 0, 100% 0, 100% 100%, 0 100%)',
+    close: 'polygon(0 0, 0 0, 0 100%, 0 100%)',
   },
   rtl: {
-    close: 'polygon(100% 0%, 100% 0%, 100% 100%, 100% 100%)',
     open: 'polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%)',
+    close: 'polygon(100% 0%, 100% 0%, 100% 100%, 100% 100%)',
   },
   center: {
-    close: 'polygon(50% 0, 50% 0, 50% 100%, 50% 100%)',
     open: 'polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%)',
+    close: 'polygon(50% 0, 50% 0, 50% 100%, 50% 100%)',
   },
 };
 
@@ -91,23 +91,23 @@ export default function AnimatedTitle({
       scrollTrigger: {
         trigger: animatedTitleRef.current,
         start: 'bottom 90%',
-        toggleActions: 'play reverse play reverse',
+        toggleActions: 'play reverse complete reverse',
       },
       ease: 'power1.inOut',
       clipPath: clipPathMap[animateDirection].open,
     });
   });
   return (
-    <div className={cn('p-[.5vw]', backgroundVariantClasses[border], tilt && tiltMap[tilt], className)}>
-      <div
-        ref={animatedTitleRef}
-        style={{
-          clipPath: clipPathMap[animateDirection].close,
-        }}
-        className={cn(`general-title ease-in-out`, backgroundVariantClasses[background])}
-      >
+    <div
+      ref={animatedTitleRef}
+      style={{
+        clipPath: clipPathMap[animateDirection].close,
+      }}
+      className={cn('p-[.5vw]', backgroundVariantClasses[border], tilt && tiltMap[tilt], className)}
+    >
+      <div className={cn(`general-title ease-in-out`, backgroundVariantClasses[background])}>
         <div className="px-7 pt-1 pb-5">
-          <h2 className={cn(colorVariantClasses[color], "text-nowrap")}>{title}</h2>
+          <h2 className={cn(colorVariantClasses[color], 'text-nowrap')}>{title}</h2>
         </div>
       </div>
     </div>

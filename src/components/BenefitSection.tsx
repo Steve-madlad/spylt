@@ -1,4 +1,5 @@
 import AnimatedTitle, { type AnimatedTitleProps } from './AnimatedTitle';
+import VideoPinSection from './VideoSection';
 
 const animatedTitles: AnimatedTitleProps[] = [
   {
@@ -15,7 +16,7 @@ const animatedTitles: AnimatedTitleProps[] = [
     color: 'dark',
     border: 'dark-light',
     background: 'milk-white',
-    className: 'relative z-3',
+    className: 'relative z-2',
     animateDirection: 'rtl',
     tilt: '2-ccw',
   },
@@ -24,7 +25,7 @@ const animatedTitles: AnimatedTitleProps[] = [
     color: 'milk-white',
     border: 'dark-light',
     background: 'red-brown',
-    className: 'relative z-2 -translate-y-2',
+    className: 'relative z-3 -translate-y-2',
     animateDirection: 'center',
     tilt: '2-cw',
   },
@@ -33,7 +34,7 @@ const animatedTitles: AnimatedTitleProps[] = [
     color: 'dark-light',
     border: 'dark-light',
     background: 'yellow',
-    className: 'relative z-1 -translate-y-4',
+    className: 'relative z-3 -translate-y-4',
     animateDirection: 'ltr',
     tilt: '3-ccw',
   },
@@ -57,6 +58,10 @@ export default function BenefitSection() {
 
           <p>And much more...</p>
         </div>
+      </div>
+
+      <div className="overlay-box relative">
+        <VideoPinSection />
       </div>
     </section>
   );
