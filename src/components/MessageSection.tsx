@@ -56,7 +56,7 @@ export default function MessageSection() {
         trigger: '.message-content p',
         start: 'top bottom',
         end: 'bottom 30%',
-        toggleActions: 'play pause resume reset'
+        toggleActions: 'play pause resume reset',
       },
       yPercent: 300,
       opacity: 0,

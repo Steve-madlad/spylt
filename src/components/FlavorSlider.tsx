@@ -7,7 +7,7 @@ import { useMediaQuery } from 'react-responsive';
 export default function FlavorSlider() {
   const carouselRef = useRef<HTMLDivElement>(null);
   const isTablet = useMediaQuery({ query: '(min-width: 1024px)' });
-  
+
   useGSAP(() => {
     if (!carouselRef.current) return;
 
