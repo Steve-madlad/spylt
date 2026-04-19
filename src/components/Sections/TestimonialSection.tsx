@@ -63,8 +63,8 @@ export default function TestimonialSection() {
     });
 
     pinTl.set('.vd-card', {
-      yPercent: 200
-    })
+      yPercent: 200,
+    });
     pinTl.to('.vd-card', {
       ease: 'power1.inOut',
       stagger: 0.2,

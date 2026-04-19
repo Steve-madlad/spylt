@@ -30,7 +30,7 @@ export default function App() {
           <NutritionSection />
           <BenefitSection />
           <TestimonialSection />
-          <Footer/>
+          <Footer />
         </div>
       </div>
     </main>

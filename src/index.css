@@ -329,7 +329,7 @@
   }
 
   .flavor-section {
-    @apply bg-milk min-h-dvh relative z-1;
+    @apply bg-milk relative z-1 min-h-dvh;
 
     .flavor-text-scroll {
       @apply border-milk absolute z-10 rotate-[-3deg] border-[.5vw] md:translate-y-5;
