@@ -15,7 +15,7 @@ export default function Hero() {
     });
 
     const tl = gsap.timeline({
-      delay: 1,
+      delay: isTablet ? 0.4 : 1.2,
     });
 
     tl.to('.hero-content', {
@@ -91,24 +91,24 @@ export default function Hero() {
             <h1 className="hero-title">irresistibly delicious</h1>
           </div>
 
-            <AnimatedTitle
-              animateDirection="center"
-              background="mid-brown"
-              border="milk-white"
-              color="milk-white"
-              tilt="3-ccw"
-              title="Protien * Caffine"
-              className="mb-8 hero-text-scroll"
-              paddingSmall
-              overrideAnimation
-            />
+          <AnimatedTitle
+            animateDirection="center"
+            background="mid-brown"
+            border="milk-white"
+            color="milk-white"
+            tilt="3-ccw"
+            title="Protien * Caffine"
+            className="hero-text-scroll mb-8"
+            paddingSmall
+            overrideAnimation
+          />
 
-          <h2 className='font-paragraph text-dark-brown mt-3 max-w-sm px-5 text-center leading-[115%] md:max-w-lg md:text-lg'>
+          <h2 className="font-paragraph text-dark-brown mt-3 max-w-sm px-5 text-center leading-[115%] md:max-w-lg md:text-lg">
             Live life to the fullest Owith SPYLT: Shatter boredom and embrace your inner kid with
             every deliciously smooth chug.
           </h2>
 
-          <Button className="text-dark-brown cursor bg-light-brown mt-10 rounded-full py-5! px-10 text-base md:text-lg font-bold uppercase md:mt-16 md:py-7! md:px-16">
+          <Button className="text-dark-brown cursor bg-light-brown mt-10 rounded-full px-10 py-5! text-base font-bold uppercase md:mt-16 md:px-16 md:py-7! md:text-lg">
             Chug a SPYLT
           </Button>
         </div>
