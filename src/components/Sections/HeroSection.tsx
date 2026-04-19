@@ -91,23 +91,16 @@ export default function Hero() {
             <h1 className="hero-title">irresistibly delicious</h1>
           </div>
 
-          <div
-            className="hero-text-scroll"
-            style={{ clipPath: 'polygon(50% 0,50% 0,50% 100%,50% 100%)' }}
-          >
-            <div className="hero-subtitle">
-              <h1>Protien * Caffine</h1>
-            </div>
-
-          </div>
             <AnimatedTitle
-              animateDirection="ltr"
+              animateDirection="center"
               background="mid-brown"
               border="milk-white"
               color="milk-white"
               tilt="3-ccw"
               title="Protien * Caffine"
-              className="mb-8 "
+              className="mb-8 hero-text-scroll"
+              paddingSmall
+              overrideAnimation
             />
 
           <h2 className='font-paragraph text-dark-brown mt-3 max-w-sm px-5 text-center leading-[115%] md:max-w-lg md:text-lg'>

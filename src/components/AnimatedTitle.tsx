@@ -23,6 +23,8 @@ export interface AnimatedTitleProps {
   background: ColorVariants;
   border: ColorVariants;
   animateDirection: AnimateDirection;
+  overrideAnimation?: boolean;
+  paddingSmall?: boolean;
   tilt?: TiltOptions;
   className?: string;
 }
@@ -81,21 +83,25 @@ export default function AnimatedTitle({
   background,
   border,
   animateDirection,
+  paddingSmall = false,
+  overrideAnimation = false,
   tilt,
   className,
 }: AnimatedTitleProps) {
   const animatedTitleRef = useRef<HTMLDivElement>(null);
 
   useGSAP(() => {
-    gsap.to(animatedTitleRef.current, {
-      scrollTrigger: {
-        trigger: animatedTitleRef.current,
-        start: 'bottom 90%',
-        toggleActions: 'play reverse complete reverse',
-      },
-      ease: 'power1.inOut',
-      clipPath: clipPathMap[animateDirection].open,
-    });
+    if (!overrideAnimation) {
+      gsap.to(animatedTitleRef.current, {
+        scrollTrigger: {
+          trigger: animatedTitleRef.current,
+          start: 'bottom 90%',
+          toggleActions: 'play reverse complete reverse',
+        },
+        ease: 'power1.inOut',
+        clipPath: clipPathMap[animateDirection].open,
+      });
+    }
   });
   return (
     <div
@@ -103,7 +109,12 @@ export default function AnimatedTitle({
       style={{
         clipPath: clipPathMap[animateDirection].close,
       }}
-      className={cn('p-[.5vw]', backgroundVariantClasses[border], tilt && tiltMap[tilt], className)}
+      className={cn(
+        paddingSmall ? 'p-[.2vw]' : 'p-[.5vw]',
+        backgroundVariantClasses[border],
+        tilt && tiltMap[tilt],
+        className,
+      )}
     >
       <div className={cn(`general-title ease-in-out`, backgroundVariantClasses[background])}>
         <div className="px-7 pt-1 pb-4 md:pb-5 2xl:pb-7">
