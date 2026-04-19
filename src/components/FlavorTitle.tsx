@@ -49,7 +49,7 @@ export default function FlavorTitle() {
       gsap.from(firstTextSplit.chars, {
         scrollTrigger: {
           trigger: '.flavor-section',
-          start: 'top 30%',
+          start: 'top 55%',
         },
         yPercent: 200,
         stagger: 0.02,
@@ -59,7 +59,7 @@ export default function FlavorTitle() {
       gsap.to('.flavor-text-scroll', {
         scrollTrigger: {
           trigger: '.flavor-section',
-          start: 'top 23%',
+          start: 'top 35%',
         },
         ease: 'power1.inOut',
         clipPath: 'polygon(0 0,100% 0,100% 100%,0 100%)',
@@ -68,7 +68,7 @@ export default function FlavorTitle() {
       gsap.from(secondTextSplit.chars, {
         scrollTrigger: {
           trigger: '.flavor-section',
-          start: 'top 18%',
+          start: 'top 28%',
         },
         yPercent: 200,
         stagger: 0.02,
