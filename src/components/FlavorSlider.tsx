@@ -7,6 +7,7 @@ import { useMediaQuery } from 'react-responsive';
 export default function FlavorSlider() {
   const carouselRef = useRef<HTMLDivElement>(null);
   const isTablet = useMediaQuery({ query: '(min-width: 1024px)' });
+  const isSmallTablet = useMediaQuery({ query: '(min-width: 768px)' });
 
   useGSAP(() => {
     if (!carouselRef.current) return;
@@ -25,7 +26,33 @@ export default function FlavorSlider() {
       });
     }
 
-    const textTl = gsap.timeline({
+    if (isSmallTablet && !isTablet) {
+      gsap.to('.flavor-title', {
+        scrollTrigger: {
+          trigger: '.flavor-title',
+          start: 'bottom 20%',
+          end: '+=500',
+          pin: true,
+        },
+      });
+
+      gsap.set('.carousel-wrapper', {
+        x: 1800,
+      });
+      gsap.to('.carousel-wrapper', {
+        x: `-${carouselRef.current.scrollWidth - carouselRef.current.scrollWidth / 1.75}px`,
+        ease: 'power1.inOut',
+        scrollTrigger: {
+          trigger: '.carousel-wrapper',
+          start: '18% center',
+          end: '+=500',
+          scrub: true,
+          pin: true,
+        },
+      });
+    }
+
+    const textTabletTl = gsap.timeline({
       scrollTrigger: {
         trigger: '.flavor-section',
         start: 'top 15%',
@@ -34,28 +61,63 @@ export default function FlavorSlider() {
       },
     });
 
-    textTl
-      .to('.first-text-split', {
-        xPercent: -30,
-        ease: 'power1.inOut',
-      })
-      .to(
-        '.flavor-text-scroll',
-        {
-          xPercent: -20,
+    const textSmallTabletTl = gsap.timeline({
+      scrollTrigger: {
+        trigger: '.flavor-section',
+        start: 'top 15%',
+        end: '+=800',
+        scrub: true,
+      },
+    });
+
+    if (isTablet) {
+      textTabletTl
+        .to('.first-text-split', {
+          xPercent: -30,
           ease: 'power1.inOut',
-        },
-        '-=0.3',
-      )
-      .to(
-        '.second-text-split',
-        {
-          xPercent: -10,
+        })
+        .to(
+          '.flavor-text-scroll',
+          {
+            xPercent: -20,
+            ease: 'power1.inOut',
+          },
+          '-=0.3',
+        )
+        .to(
+          '.second-text-split',
+          {
+            xPercent: -10,
+            ease: 'power1.inOut',
+          },
+          '<',
+        );
+    }
+
+    if (isSmallTablet && !isTablet) {
+      textSmallTabletTl
+        .to('.first-text-split', {
+          xPercent: 70,
           ease: 'power1.inOut',
-        },
-        '<',
-      );
-  });
+        })
+        .to(
+          '.flavor-text-scroll',
+          {
+            xPercent: 50,
+            ease: 'power1.inOut',
+          },
+          '-=0.4',
+        )
+        .to(
+          '.second-text-split',
+          {
+            xPercent: -30,
+            ease: 'power1.inOut',
+          },
+          '<',
+        );
+    }
+  }, [isTablet, isSmallTablet]);
 
   return (
     <div className="carousel-wrapper">
