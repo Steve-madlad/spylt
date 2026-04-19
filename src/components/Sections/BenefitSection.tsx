@@ -1,5 +1,5 @@
-import AnimatedTitle, { type AnimatedTitleProps } from './AnimatedTitle';
-import VideoPinSection from './VideoSection';
+import AnimatedTitle, { type AnimatedTitleProps } from '../AnimatedTitle';
+import VideoPinSection from '../VideoSection';
 
 const animatedTitles: AnimatedTitleProps[] = [
   {

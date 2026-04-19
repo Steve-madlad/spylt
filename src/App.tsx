@@ -1,13 +1,14 @@
 import { useGSAP } from '@gsap/react';
 import gsap from 'gsap';
 import { ScrollSmoother, ScrollTrigger } from 'gsap/all';
-import BenefitSection from './components/BenefitSection';
-import FlavorSection from './components/FlavorsSection';
-import HeroSection from './components/HeroSection';
-import MessageSection from './components/MessageSection';
 import Navbar from './components/Navbar';
-import NutritionSection from './components/NutritionSection';
-import TestimonialSection from './components/TestimonialSection';
+import BenefitSection from './components/Sections/BenefitSection';
+import FlavorSection from './components/Sections/FlavorsSection';
+import HeroSection from './components/Sections/HeroSection';
+import MessageSection from './components/Sections/MessageSection';
+import NutritionSection from './components/Sections/NutritionSection';
+import TestimonialSection from './components/Sections/TestimonialSection';
+import Footer from './components/Footer';
 
 gsap.registerPlugin(ScrollTrigger, ScrollSmoother);
 export default function App() {
@@ -29,7 +30,7 @@ export default function App() {
           <NutritionSection />
           <BenefitSection />
           <TestimonialSection />
-          <div className="bg-mid-brown h-screen overflow-hidden"></div>
+          <Footer/>
         </div>
       </div>
     </main>

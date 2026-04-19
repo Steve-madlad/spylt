@@ -106,7 +106,7 @@ export default function AnimatedTitle({
       className={cn('p-[.5vw]', backgroundVariantClasses[border], tilt && tiltMap[tilt], className)}
     >
       <div className={cn(`general-title ease-in-out`, backgroundVariantClasses[background])}>
-        <div className="px-7 pt-1 pb-5">
+        <div className="px-7 pt-1 pb-4 md:pb-5 2xl:pb-7">
           <h2 className={cn(colorVariantClasses[color], 'text-nowrap')}>{title}</h2>
         </div>
       </div>

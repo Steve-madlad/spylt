@@ -1,8 +1,14 @@
 import { useGSAP } from '@gsap/react';
 import gsap from 'gsap';
 import { SplitText } from 'gsap/all';
+import { useMediaQuery } from 'react-responsive';
+import AnimatedTitle from '../AnimatedTitle';
+import { Button } from '../ui/button';
 
 export default function Hero() {
+  const isMobile = useMediaQuery({ query: '(max-width: 768px)' });
+  const isTablet = useMediaQuery({ query: '(max-width: 1024px)' });
+
   useGSAP(() => {
     const textSplit = SplitText.create('.hero-title', {
       type: 'chars',
@@ -55,11 +61,30 @@ export default function Hero() {
   return (
     <section className="bg-main-bg overflow-hidden">
       <div className="hero-container">
-        <img
-          src="/images/hero-img.png"
-          alt="hero image"
-          className="abs-center-x object-auto bottom-0 scale-100 md:scale-150"
-        />
+        {isTablet ? (
+          <>
+            {isMobile && (
+              <img
+                src="/images/hero-bg.png"
+                className="absolute size-full object-cover"
+                alt="spylt drinks"
+              />
+            )}
+            <img
+              src="/images/hero-img.png"
+              className="abs-center-x object-auto bottom-0"
+              alt="spylt drinks"
+            />
+          </>
+        ) : (
+          <video
+            autoPlay
+            playsInline
+            muted
+            className="absolute inset-0 size-full object-cover"
+            src="/videos/hero-bg.mp4"
+          />
+        )}
 
         <div className="hero-content opacity-0">
           <div className="overflow-hidden">
@@ -73,16 +98,26 @@ export default function Hero() {
             <div className="hero-subtitle">
               <h1>Protien * Caffine</h1>
             </div>
-          </div>
 
-          <h2>
+          </div>
+            <AnimatedTitle
+              animateDirection="ltr"
+              background="mid-brown"
+              border="milk-white"
+              color="milk-white"
+              tilt="3-ccw"
+              title="Protien * Caffine"
+              className="mb-8 "
+            />
+
+          <h2 className='font-paragraph text-dark-brown mt-3 max-w-sm px-5 text-center leading-[115%] md:max-w-lg md:text-lg'>
             Live life to the fullest Owith SPYLT: Shatter boredom and embrace your inner kid with
             every deliciously smooth chug.
           </h2>
 
-          <div className="hero-button">
-            <p>Chug a SPYLT</p>
-          </div>
+          <Button className="text-dark-brown cursor bg-light-brown mt-10 rounded-full py-5! px-10 text-base md:text-lg font-bold uppercase md:mt-16 md:py-7! md:px-16">
+            Chug a SPYLT
+          </Button>
         </div>
       </div>
     </section>

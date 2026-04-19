@@ -258,7 +258,7 @@
     display: none;
   }
   .general-title {
-    @apply text-5xl leading-[9vw] font-bold tracking-[-.35vw] uppercase md:text-8xl 2xl:text-[8.5rem];
+    @apply text-[3.3rem] leading-15 font-bold tracking-tighter uppercase md:text-8xl md:text-[6rem] md:leading-25 2xl:text-[8.5rem] 2xl:leading-35;
   }
 }
 
@@ -271,10 +271,10 @@
     @apply bg-milk relative h-dvh w-screen overflow-hidden;
 
     .hero-content {
-      @apply relative z-10 flex h-full w-full translate-y-10 flex-col items-center pt-24 md:pt-32 2xl:justify-center 2xl:pt-0;
+      @apply relative z-10 flex h-full w-full translate-y-10 flex-col items-center px-2 pt-24 md:pt-32 2xl:justify-center 2xl:pt-0;
 
       .hero-title {
-        @apply text-dark-brown mb-5 text-[3.3rem] leading-[9vw] font-bold tracking-[-.35vw] uppercase md:text-[6.5rem] 2xl:mb-0 2xl:text-[8.5rem];
+        @apply text-dark-brown pr-1 text-[3.3rem] leading-15 font-bold tracking-tighter uppercase md:text-[6rem] md:leading-25 lg:text-[6.5rem] 2xl:text-[8.5rem] 2xl:leading-35;
       }
 
       .hero-text-scroll {
@@ -284,14 +284,14 @@
           @apply bg-mid-brown;
         }
 
-        h1 {
+        /* h1 {
           @apply px-3 py-3 pb-5 text-[3.3rem] leading-[9vw] font-bold tracking-[-.35vw] text-[#fce1cd] uppercase md:text-[6.5rem] 2xl:px-[1.2vw] 2xl:py-0 2xl:pb-[1vw] 2xl:text-[8.5rem];
-        }
+        } */
       }
 
-      h2 {
+      /* h2 {
         @apply font-paragraph text-dark-brown mt-3 max-w-sm px-5 text-center leading-[115%] md:max-w-lg md:text-lg;
-      }
+      } */
 
       .hero-button {
         @apply text-dark-brown bg-light-brown mt-10 rounded-full p-3 px-10 text-lg font-bold uppercase md:mt-16 md:p-5 md:px-16;
