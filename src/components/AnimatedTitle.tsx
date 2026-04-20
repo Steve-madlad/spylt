@@ -24,6 +24,7 @@ export interface AnimatedTitleProps {
   border: ColorVariants;
   animateDirection: AnimateDirection;
   overrideAnimation?: boolean;
+  animationEnd?: string;
   paddingSmall?: boolean;
   tilt?: TiltOptions;
   className?: string;
@@ -86,6 +87,7 @@ export default function AnimatedTitle({
   animateDirection,
   paddingSmall = false,
   overrideAnimation = false,
+  animationEnd = undefined,
   tilt,
   className,
   titleContainerClassName,
@@ -98,13 +100,15 @@ export default function AnimatedTitle({
         scrollTrigger: {
           trigger: animatedTitleRef.current,
           start: 'bottom 90%',
-          toggleActions: 'play reverse complete reverse',
+          end: animationEnd,
+          toggleActions: 'play none none reverse',
         },
         ease: 'power1.inOut',
         clipPath: clipPathMap[animateDirection].open,
       });
     }
   });
+
   return (
     <div
       ref={animatedTitleRef}
@@ -118,13 +122,8 @@ export default function AnimatedTitle({
         className,
       )}
     >
-      <div
-        className={cn(
-          `general-title ease-in-out`,
-          backgroundVariantClasses[background],
-        )}
-      >
-        <div className={cn("px-7 pt-1 pb-4 md:pb-5 2xl:pb-7", titleContainerClassName)}>
+      <div className={cn(`general-title ease-in-out`, backgroundVariantClasses[background])}>
+        <div className={cn('px-7 pt-1 pb-4 md:pb-5 2xl:pb-7', titleContainerClassName)}>
           <h2 className={cn(colorVariantClasses[color], 'text-nowrap')}>{title}</h2>
         </div>
       </div>
