@@ -75,7 +75,18 @@
   .hide-children > * {
     display: none;
   }
+  .delayed-z-50 {
+    z-index: 0;
+    animation: delayed-z-50 0s ease 0.5s forwards;
+  }
 }
+
+@keyframes delayed-z-50 {
+  to {
+    z-index: 50;
+  }
+}
+
 @theme inline {
   --animate-spin-circle: var(--spin-circle);
   --font-heading: var(--font-sans);
@@ -440,10 +451,16 @@
     @apply bg-milk relative h-[120dvh] w-full;
 
     .pin-box {
-      @apply absolute bottom-[50vh] flex w-full items-center justify-center ps-52 2xl:bottom-32;
+      @apply absolute bottom-[50vh] flex w-full items-center justify-center ps-52 2xl:top-[60%] 2xl:-translate-y-1/2;
 
       .vd-card {
-        @apply border-milk absolute -ms-44 w-80 flex-none overflow-hidden rounded-3xl border-[.5vw] md:w-96 md:rounded-[2vw] 2xl:relative;
+        @apply border-milk ring-milk absolute -ms-44 w-80 flex-none overflow-hidden rounded-3xl border-[.5vw] duration-100 hover:ring-4 md:w-85 md:rounded-[2vw] 2xl:relative;
+        z-index: 0;
+        animation: none;
+      }
+
+      .vd-card:hover {
+        animation: delayed-z-50 0s ease .3s forwards;
       }
     }
 

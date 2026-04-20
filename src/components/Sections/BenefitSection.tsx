@@ -1,48 +1,10 @@
 import { useGSAP } from '@gsap/react';
 import gsap from 'gsap';
-import { useMediaQuery } from 'react-responsive';
-import AnimatedTitle, { type AnimatedTitleProps } from '../AnimatedTitle';
-import VideoPinSection from '../VideoSection';
 import { SplitText } from 'gsap/all';
-
-const animatedTitles: AnimatedTitleProps[] = [
-  {
-    title: 'Shelf Stable',
-    color: 'milk-white',
-    border: 'dark-light',
-    background: 'light-brown',
-    className: 'relative z-4',
-    animateDirection: 'ltr',
-    tilt: '3-cw',
-  },
-  {
-    title: 'Protien * Caffeine',
-    color: 'dark',
-    border: 'dark-light',
-    background: 'milk-white',
-    className: 'relative z-2',
-    animateDirection: 'rtl',
-    tilt: '2-ccw',
-  },
-  {
-    title: 'completely recyclable',
-    color: 'milk-white',
-    border: 'dark-light',
-    background: 'red-brown',
-    className: 'relative z-3 -translate-y-2',
-    animateDirection: 'center',
-    tilt: '2-cw',
-  },
-  {
-    title: 'lactose free',
-    color: 'dark-light',
-    border: 'dark-light',
-    background: 'yellow',
-    className: 'relative z-3 -translate-y-4',
-    animateDirection: 'ltr',
-    tilt: '3-ccw',
-  },
-];
+import { useMediaQuery } from 'react-responsive';
+import AnimatedTitle from '../AnimatedTitle';
+import VideoPinSection from '../VideoSection';
+import { animatedTitles } from '@/lib/constants';
 
 export default function BenefitSection() {
   const isTablet = useMediaQuery({ query: '(max-width: 820px)' });
@@ -56,6 +18,7 @@ export default function BenefitSection() {
       scrollTrigger: {
         trigger: '.bottom-text',
         start: 'top 80%',
+        toggleActions: 'play none none reverse',
       },
       yPercent: 200,
       rotate: 3,

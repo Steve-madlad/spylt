@@ -1,3 +1,5 @@
+import type { AnimatedTitleProps } from '@/components/AnimatedTitle';
+
 const flavorlists = [
   {
     name: 'Chocolate Milk',
@@ -28,6 +30,45 @@ const flavorlists = [
     name: 'Max Chocolate Milk',
     color: 'black',
     rotation: 'md:rotate-[8deg] rotate-0',
+  },
+];
+
+const animatedTitles: AnimatedTitleProps[] = [
+  {
+    title: 'Shelf Stable',
+    color: 'milk-white',
+    border: 'dark-light',
+    background: 'light-brown',
+    className: 'relative z-4',
+    animateDirection: 'ltr',
+    tilt: '3-cw',
+  },
+  {
+    title: 'Protien * Caffeine',
+    color: 'dark',
+    border: 'dark-light',
+    background: 'milk-white',
+    className: 'relative z-2',
+    animateDirection: 'rtl',
+    tilt: '2-ccw',
+  },
+  {
+    title: 'fully recyclable',
+    color: 'milk-white',
+    border: 'dark-light',
+    background: 'red-brown',
+    className: 'relative z-3 -translate-y-2',
+    animateDirection: 'center',
+    tilt: '2-cw',
+  },
+  {
+    title: 'lactose free',
+    color: 'dark-light',
+    border: 'dark-light',
+    background: 'yellow',
+    className: 'relative z-3 -translate-y-4',
+    animateDirection: 'ltr',
+    tilt: '3-ccw',
   },
 ];
 
@@ -89,4 +130,4 @@ const cards = [
   },
 ];
 
-export { flavorlists, nutrientLists, cards };
+export { animatedTitles, cards, flavorlists, nutrientLists };
