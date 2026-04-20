@@ -7,12 +7,12 @@ const FooterSection = () => {
   return (
     <footer className="footer-section">
       <img src="/images/footer-dip.png" alt="waving background" />
-      <h2 className="text-milk text-center text-8xl font-bold tracking-tight uppercase">
+      <h2 className="text-milk mt-10 text-center text-5xl font-bold tracking-tight uppercase sm:text-7xl md:mt-0 md:text-8xl">
         #chugresponsibly
       </h2>
 
-      <div className="px-8 pb-5 relative">
-        <div className="just-center mb-40 gap-6 pt-20">
+      <div className="relative px-8 pb-5">
+        <div className="just-end mb-40 gap-6 pt-20 sm:justify-center!">
           <Button className="cursor hover:bg-mid-brown flex-center border-milk size-15 rounded-full border bg-transparent">
             <img src="/images/tiktok.svg" alt="" />
           </Button>
@@ -24,10 +24,10 @@ const FooterSection = () => {
           </Button>
         </div>
 
-        <div className="col lg:flex-row! lg:justify-between gap-15 lg:gap-0 lg:items-end">
-          <div className="text-milk font-paragraph flex gap-5">
+        <div className="col gap-15 lg:flex-row! lg:items-end lg:justify-between lg:gap-0">
+          <div className="text-milk font-paragraph just-between gap-5 sm:justify-normal!">
             <ul className="col gap-1">
-              <li className="mb-2 font-semibold text-light-brown">SPYLT Flavors</li>
+              <li className="text-light-brown mb-2 font-semibold">SPYLT Flavors</li>
               {flavorlists.map((flavor) => (
                 <li
                   className="col cursor hover:text-light-brown capitalize hover:underline"
@@ -39,7 +39,7 @@ const FooterSection = () => {
             </ul>
 
             <ul className="col gap-1">
-              <li className="mb-2 font-semibold text-light-brown">Chug Club</li>
+              <li className="text-light-brown mb-2 font-semibold">Chug Club</li>
               <li className="cursor hover:text-light-brown capitalize hover:underline">
                 Join the Club
               </li>
@@ -52,7 +52,7 @@ const FooterSection = () => {
             </ul>
 
             <ul className="col gap-1">
-              <li className="mb-2 font-semibold text-light-brown">About SPYLT</li>
+              <li className="text-light-brown mb-2 font-semibold">About SPYLT</li>
               <li className="cursor hover:text-light-brown capitalize hover:underline">
                 Our Story
               </li>
@@ -66,7 +66,18 @@ const FooterSection = () => {
             </ul>
           </div>
 
-          <video src="/videos/splash.mp4" className='object-cover -scale-x-[1] lg:scale-100 pointer-events-none w-2/3 lg:w-full mix-blend-lighten absolute right-0 -top-16.5 lg:left-0 lg:-bottom-30 xl:-bottom-90' playsInline autoPlay muted/>
+          <video
+            src="/videos/splash.mp4"
+            className="pointer-events-none absolute right-0 bottom-27 hidden w-2/3 object-cover mix-blend-lighten md:block lg:-bottom-30 lg:left-0 lg:w-full lg:scale-100 xl:-bottom-90"
+            playsInline
+            autoPlay
+            muted
+          />
+          <img
+            className="pointer-events-none absolute top-0 block w-1/2 max-w-64.25 object-cover sm:top-40 sm:right-4 sm:max-w-max sm:-scale-x-[1] md:hidden"
+            src="/images/footer-drink.png"
+            alt="spylt drink"
+          />
 
           <div className="text-milk lg:max-w-1/3">
             <p className="font-paragraph text-lg">
@@ -86,12 +97,15 @@ const FooterSection = () => {
           </div>
         </div>
 
-        <div className='flex-between text-milk font-paragraph mt-8 border-t border-zinc-600 pt-8'>
-          <p className="font-paragraph">Copyright © {new Date().getFullYear()} Spylt - All Rights Reserved</p>
+        <div className="col-between text-milk font-paragraph mt-8 gap-5 border-t border-zinc-600 pt-8 sm:flex-row">
+          <p className="font-paragraph">
+            Copyright © {new Date().getFullYear()} Spylt - All Rights Reserved
+          </p>
 
-          <ul className='flex gap-4'>
-            <li className='hover:text-light-brown hover:underline cursor'>Privacy Policy</li>
-            <li className='hover:text-light-brown hover:underline cursor'>Terms of Service</li>
+          <ul className="flex gap-4">
+            <li className="hover:text-light-brown cursor hover:underline">Privacy Policy</li>
+            <b className="sm:hidden">•</b>
+            <li className="hover:text-light-brown cursor hover:underline">Terms of Service</li>
           </ul>
         </div>
       </div>
