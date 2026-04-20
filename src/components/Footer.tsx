@@ -24,10 +24,10 @@ const FooterSection = () => {
           </Button>
         </div>
 
-        <div className="just-between items-end">
+        <div className="col lg:flex-row! lg:justify-between gap-15 lg:gap-0 lg:items-end">
           <div className="text-milk font-paragraph flex gap-5">
             <ul className="col gap-1">
-              <li className="mb-2 font-semibold">SPYLT Flavors</li>
+              <li className="mb-2 font-semibold text-light-brown">SPYLT Flavors</li>
               {flavorlists.map((flavor) => (
                 <li
                   className="col cursor hover:text-light-brown capitalize hover:underline"
@@ -37,8 +37,9 @@ const FooterSection = () => {
                 </li>
               ))}
             </ul>
+
             <ul className="col gap-1">
-              <li className="mb-2 font-semibold">Chug Club</li>
+              <li className="mb-2 font-semibold text-light-brown">Chug Club</li>
               <li className="cursor hover:text-light-brown capitalize hover:underline">
                 Join the Club
               </li>
@@ -49,8 +50,9 @@ const FooterSection = () => {
                 Exclusive Drops
               </li>
             </ul>
+
             <ul className="col gap-1">
-              <li className="mb-2 font-semibold">About SPYLT</li>
+              <li className="mb-2 font-semibold text-light-brown">About SPYLT</li>
               <li className="cursor hover:text-light-brown capitalize hover:underline">
                 Our Story
               </li>
@@ -64,9 +66,9 @@ const FooterSection = () => {
             </ul>
           </div>
 
-          <video src="/videos/splash.mp4" className='object-cover w-full mix-blend-lighten absolute left-0 -bottom-90' playsInline autoPlay muted/>
+          <video src="/videos/splash.mp4" className='object-cover -scale-x-[1] lg:scale-100 pointer-events-none w-2/3 lg:w-full mix-blend-lighten absolute right-0 -top-16.5 lg:left-0 lg:-bottom-30 xl:-bottom-90' playsInline autoPlay muted/>
 
-          <div className="text-milk max-w-1/3">
+          <div className="text-milk lg:max-w-1/3">
             <p className="font-paragraph text-lg">
               Get Exclusive Early Access and Stay Informed About Product Updates, Events, and More!
             </p>
