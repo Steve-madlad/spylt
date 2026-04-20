@@ -1,5 +1,5 @@
-import FlavorSlider from '../FlavorSlider';
-import FlavorTitle from '../FlavorTitle';
+import FlavorSlider from '../flavor components/FlavorSlider';
+import FlavorTitle from '../flavor components/FlavorTitle';
 
 export default function FlavorSection() {
   return (

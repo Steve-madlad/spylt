@@ -217,6 +217,9 @@
   .just-start {
     @apply flex justify-start;
   }
+  .just-between {
+    @apply flex justify-between;
+  }
   .just-center {
     @apply flex justify-center;
   }
@@ -258,6 +261,9 @@
   }
   .abs-center-x {
     @apply absolute left-1/2 -translate-x-1/2;
+  }
+  .abs-center-y {
+    @apply absolute top-1/2 -translate-y-1/2;
   }
   .abs-center {
     @apply absolute top-1/2 left-1/2 -translate-1/2;

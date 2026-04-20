@@ -1,7 +1,7 @@
 import { useGSAP } from '@gsap/react';
 import gsap from 'gsap';
 import { SplitText } from 'gsap/all';
-import AnimatedTitle from './AnimatedTitle';
+import AnimatedTitle from '../AnimatedTitle';
 
 export default function FlavorTitle() {
   useGSAP(() => {
