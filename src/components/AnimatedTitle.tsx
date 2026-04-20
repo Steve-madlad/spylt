@@ -27,6 +27,7 @@ export interface AnimatedTitleProps {
   paddingSmall?: boolean;
   tilt?: TiltOptions;
   className?: string;
+  titleContainerClassName?: string;
 }
 
 const tiltMap: Record<TiltOptions, string> = {
@@ -87,6 +88,7 @@ export default function AnimatedTitle({
   overrideAnimation = false,
   tilt,
   className,
+  titleContainerClassName,
 }: AnimatedTitleProps) {
   const animatedTitleRef = useRef<HTMLDivElement>(null);
 
@@ -116,8 +118,13 @@ export default function AnimatedTitle({
         className,
       )}
     >
-      <div className={cn(`general-title ease-in-out`, backgroundVariantClasses[background])}>
-        <div className="px-7 pt-1 pb-4 md:pb-5 2xl:pb-7">
+      <div
+        className={cn(
+          `general-title ease-in-out`,
+          backgroundVariantClasses[background],
+        )}
+      >
+        <div className={cn("px-7 pt-1 pb-4 md:pb-5 2xl:pb-7", titleContainerClassName)}>
           <h2 className={cn(colorVariantClasses[color], 'text-nowrap')}>{title}</h2>
         </div>
       </div>

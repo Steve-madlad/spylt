@@ -258,7 +258,7 @@
     display: none;
   }
   .general-title {
-    @apply text-[3.3rem] leading-15 font-bold tracking-tighter uppercase md:text-8xl md:text-[6rem] md:leading-25 2xl:text-[8.5rem] 2xl:leading-35;
+    @apply text-[3.3rem] leading-15 font-bold tracking-tighter uppercase md:text-8xl md:text-[6rem] md:leading-25 xl:text-[7.5rem] 2xl:text-[8.5rem] 2xl:leading-35;
   }
 }
 
@@ -365,18 +365,18 @@
   }
 
   .nutrition-section {
-    @apply relative min-h-dvh overflow-hidden 2xl:h-[120dvh];
+    @apply relative h-dvh overflow-hidden 2xl:h-[120dvh];
 
     .big-img {
-      @apply absolute bottom-0 left-0 h-1/2 w-full object-cover object-bottom md:h-2/3 2xl:h-full 2xl:object-contain;
+      @apply absolute bottom-0 left-0 w-full object-cover object-bottom 2xl:object-contain;
     }
 
     .nutrition-title {
-      @apply py-3 pb-0 text-[#513022] md:py-0 md:pb-5 md:text-center lg:pb-0 xl:max-w-2xl 2xl:max-w-4xl;
+      @apply py-3 pb-0 text-[#513022] text-[3.3rem] xl:text-[7.5rem] 2xl:text-[8.5rem] lg:text-[6rem] md:text-[5rem] md:py-0 md:pb-5 md:text-center lg:pb-0 ;
     }
 
     .nutrition-text-scroll {
-      @apply -mt-24 rotate-[-3deg] border-[.5vw] border-[#e3d3bc] text-nowrap opacity-0 md:-mt-28;
+      @apply -mt-24 opacity-0 md:-mt-28;
     }
 
     .nutrition-box {
