@@ -7,7 +7,7 @@ const FooterSection = () => {
   return (
     <footer className="footer-section">
       <img src="/images/footer-dip.png" alt="waving background" />
-      <h2 className="text-milk mt-10 text-center text-5xl font-bold tracking-tight uppercase sm:text-7xl md:mt-0 md:text-8xl">
+      <h2 className="text-milk mt-10 text-center text-5xl font-bold tracking-tight uppercase sm:text-7xl md:mt-15 lg:mt-0 md:text-8xl">
         #chugresponsibly
       </h2>
 
@@ -97,7 +97,7 @@ const FooterSection = () => {
           </div>
         </div>
 
-        <div className="col-between text-milk font-paragraph mt-8 gap-5 border-t border-zinc-600 pt-8 sm:flex-row">
+        <div className="text-milk font-paragraph col mt-8 flex gap-5 border-t border-zinc-600 pt-8 sm:flex-row! sm:justify-between">
           <p className="font-paragraph">
             Copyright © {new Date().getFullYear()} Spylt - All Rights Reserved
           </p>
