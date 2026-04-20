@@ -344,7 +344,7 @@
     }
 
     .carousel-wrapper {
-      @apply mt-0 min-h-dvh w-full md:mt-20 md:min-h-fit lg:h-dvh lg:mt-0;
+      @apply mt-0 min-h-dvh w-full md:mt-20 md:min-h-fit lg:mt-0 lg:h-dvh;
 
       .flavors {
         @apply flex h-full w-full flex-col flex-nowrap items-center gap-7 md:flex-row md:gap-24 lg:gap-30 2xl:gap-40;
@@ -372,7 +372,7 @@
     }
 
     .nutrition-title {
-      @apply py-3 pb-0 text-[#513022] text-[3.3rem] xl:text-[7.5rem] 2xl:text-[8.5rem] lg:text-[6rem] md:text-[5rem] md:py-0 md:pb-5 md:text-center lg:pb-0 ;
+      @apply py-3 pb-0 text-[3.3rem] text-[#513022] md:py-0 md:pb-5 md:text-center md:text-[5rem] lg:pb-0 lg:text-[6rem] xl:text-[7.5rem] 2xl:text-[8.5rem];
     }
 
     .nutrition-text-scroll {

@@ -46,12 +46,12 @@ const animatedTitles: AnimatedTitleProps[] = [
 
 export default function BenefitSection() {
   const isTablet = useMediaQuery({ query: '(max-width: 820px)' });
-  
+
   useGSAP(() => {
     const textSplit = SplitText.create('.bottom-text', {
       type: 'words, chars',
     });
-  
+
     gsap.from(textSplit.chars, {
       scrollTrigger: {
         trigger: '.bottom-text',

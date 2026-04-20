@@ -83,7 +83,6 @@ export default function NutritionSection() {
             </p>
           </div>
         </div>
-
       </div>
     </section>
   );
