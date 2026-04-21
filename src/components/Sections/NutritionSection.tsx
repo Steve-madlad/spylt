@@ -51,8 +51,8 @@ export default function NutritionSection() {
   });
   return (
     <section className="nutrition-section">
-      <img src="/images/slider-dip.png" alt="" className="w-full object-cover" />
-      <img src="/images/big-img.png" alt="" className="big-img" />
+      <img src="/images/slider-dip.png" alt="waving backround" className="w-full object-cover" />
+      <img src="/images/big-img.png" alt="spylt drink background" className="big-img" />
 
       <div className="col-center mt-14 px-5 sm:justify-between md:mt-0 md:-translate-y-10 md:flex-row! md:px-10">
         <div className="relative inline-block">
@@ -81,6 +81,24 @@ export default function NutritionSection() {
               Milk contains a wide array of nutrients, including vitamins, minerals, and protein,
               and this is lactose free
             </p>
+          </div>
+        </div>
+
+        <div className="nutrition-box">
+          <div className="list-wrapper">
+            {nutrientLists.map((nutrient, index) => (
+              <div key={index} className="col-center min-w-30 px-3 lg:px-5 relative flex-1">
+                <div>
+                  <p className="font-paragraph text-base lg:text-lg">{nutrient.label}</p>
+                  <p className="font-paragraph mt-1 text-sm">up to</p>
+                  <p className="text-base lg:text-xl font-bold tracking-tighter">
+                    {nutrient.amount}
+                  </p>
+                </div>
+
+                {index !== nutrientLists.length - 1 && <div className="spacer-border" />}
+              </div>
+            ))}
           </div>
         </div>
       </div>

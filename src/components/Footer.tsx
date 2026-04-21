@@ -14,13 +14,13 @@ const FooterSection = () => {
       <div className="relative px-8 pb-5">
         <div className="just-end mb-40 gap-6 pt-20 sm:justify-center!">
           <Button className="cursor hover:bg-mid-brown flex-center border-milk size-15 rounded-full border bg-transparent">
-            <img src="/images/tiktok.svg" alt="" />
+            <img src="/images/tiktok.svg" alt="tiktok" />
           </Button>
           <Button className="cursor hover:bg-mid-brown flex-center border-milk size-15 rounded-full border bg-transparent">
-            <img src="/images/insta.svg" alt="" />
+            <img src="/images/insta.svg" alt="instagram" />
           </Button>
           <Button className="cursor hover:bg-mid-brown flex-center border-milk size-15 rounded-full border bg-transparent">
-            <img src="/images/yt.svg" alt="" />
+            <img src="/images/yt.svg" alt="youtube" />
           </Button>
         </div>
 
