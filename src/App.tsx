@@ -1,6 +1,7 @@
 import { useGSAP } from '@gsap/react';
 import gsap from 'gsap';
 import { ScrollSmoother, ScrollTrigger } from 'gsap/all';
+import Footer from './components/Footer';
 import Navbar from './components/Navbar';
 import BenefitSection from './components/sections/BenefitSection';
 import FlavorSection from './components/sections/FlavorsSection';
@@ -8,7 +9,6 @@ import HeroSection from './components/sections/HeroSection';
 import MessageSection from './components/sections/MessageSection';
 import NutritionSection from './components/sections/NutritionSection';
 import TestimonialSection from './components/sections/TestimonialSection';
-import Footer from './components/Footer';
 
 gsap.registerPlugin(ScrollTrigger, ScrollSmoother);
 export default function App() {

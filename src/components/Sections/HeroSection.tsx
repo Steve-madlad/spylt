@@ -1,12 +1,11 @@
 import { useGSAP } from '@gsap/react';
 import gsap from 'gsap';
-import { SplitText } from 'gsap/all';
+import { ScrollSmoother, SplitText } from 'gsap/all';
 import { useMediaQuery } from 'react-responsive';
 import AnimatedTitle from '../AnimatedTitle';
 import { Button } from '../ui/button';
 
 export default function Hero() {
-  const isMobile = useMediaQuery({ query: '(max-width: 768px)' });
   const isTablet = useMediaQuery({ query: '(max-width: 1024px)' });
 
   useGSAP(() => {
@@ -63,13 +62,12 @@ export default function Hero() {
       <div className="hero-container">
         {isTablet ? (
           <>
-            {isMobile && (
-              <img
-                src="/images/hero-bg.png"
-                className="absolute size-full object-cover"
-                alt="spylt drinks"
-              />
-            )}
+            <img
+              src="/images/hero-bg.png"
+              className="absolute size-full object-cover"
+              alt="spylt drinks"
+            />
+
             <img
               src="/images/hero-img.png"
               className="abs-center-x object-auto bottom-0"
@@ -93,9 +91,7 @@ export default function Hero() {
 
           <AnimatedTitle
             animateDirection="center"
-            background="mid-brown"
-            border="milk-white"
-            color="milk-white"
+            variant='brown-white'
             tilt="3-ccw"
             title="Protien * Caffine"
             className="hero-text-scroll mb-8"
@@ -108,7 +104,13 @@ export default function Hero() {
             every deliciously smooth chug.
           </h2>
 
-          <Button className="text-dark-brown cursor bg-light-brown mt-10 rounded-full px-10 py-5! text-base font-bold uppercase md:mt-16 md:px-16 md:py-7! md:text-lg">
+          <Button
+            onClick={(e) => {
+              e.preventDefault();
+              ScrollSmoother.get()?.scrollTo('#message', true);
+            }}
+            className="text-dark-brown cursor bg-light-brown! mt-10 rounded-full px-10 py-5! text-base font-bold uppercase md:mt-16 md:px-16 md:py-7! md:text-lg"
+          >
             Chug a SPYLT
           </Button>
         </div>

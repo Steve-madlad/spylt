@@ -63,9 +63,7 @@ export default function NutritionSection() {
 
             <AnimatedTitle
               title="you good"
-              color="milk-yellow"
-              border="milk-white"
-              background="mid-brown"
+              variant='brown-white'
               animateDirection="ltr"
               tilt="3-ccw"
               className="nutrition-text-scroll -translate-y-2 place-self-start md:-translate-y-4 lg:translate-y-0"

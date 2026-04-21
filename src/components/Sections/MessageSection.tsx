@@ -66,7 +66,7 @@ export default function MessageSection() {
     });
   });
   return (
-    <section className="message-content">
+    <section id="message" className="message-content">
       <div className="flex-center relative container mx-auto py-28">
         <div className="size-full">
           <div className="msg-wrapper">

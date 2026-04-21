@@ -1,46 +1,10 @@
 import { cn } from '@/lib/utils';
 import { useGSAP } from '@gsap/react';
+import { cva } from 'class-variance-authority';
 import gsap from 'gsap';
 import { useRef } from 'react';
 
-type ColorVariants =
-  | 'dark'
-  | 'dark-light'
-  | 'dark-brown'
-  | 'mid-brown'
-  | 'light-brown'
-  | 'red-brown'
-  | 'milk-white'
-  | 'milk-yellow'
-  | 'yellow';
-
-type TiltOptions = '2-cw' | '2-ccw' | '3-cw' | '3-ccw' | '6-cw' | '6-ccw';
-type AnimateDirection = 'ltr' | 'rtl' | 'center';
-
-export interface AnimatedTitleProps {
-  title: string;
-  color: ColorVariants;
-  background: ColorVariants;
-  border: ColorVariants;
-  animateDirection: AnimateDirection;
-  overrideAnimation?: boolean;
-  animationEnd?: string;
-  paddingSmall?: boolean;
-  tilt?: TiltOptions;
-  className?: string;
-  titleContainerClassName?: string;
-}
-
-const tiltMap: Record<TiltOptions, string> = {
-  '2-cw': 'rotate-2',
-  '2-ccw': '-rotate-2',
-  '3-cw': 'rotate-3',
-  '3-ccw': '-rotate-3',
-  '6-cw': 'rotate-6',
-  '6-ccw': '-rotate-6',
-};
-
-const backgroundVariantClasses: Record<ColorVariants, string> = {
+const BORDER_VARIANTS = {
   dark: 'bg-black',
   'dark-light': 'bg-main-bg',
   'dark-brown': 'bg-dark-brown',
@@ -52,7 +16,19 @@ const backgroundVariantClasses: Record<ColorVariants, string> = {
   yellow: 'bg-yellow',
 };
 
-const colorVariantClasses: Record<ColorVariants, string> = {
+const BG_VARIANTS = {
+  dark: 'bg-black',
+  'dark-light': 'bg-main-bg',
+  'dark-brown': 'bg-dark-brown',
+  'mid-brown': 'bg-mid-brown',
+  'light-brown': 'bg-light-brown',
+  'red-brown': 'bg-red-brown',
+  'milk-white': 'bg-milk',
+  'milk-yellow': 'bg-milk-yellow',
+  yellow: 'bg-yellow',
+};
+
+const TEXT_VARIANTS = {
   dark: 'text-black',
   'dark-light': 'text-main-bg',
   'dark-brown': 'text-dark-brown',
@@ -64,7 +40,53 @@ const colorVariantClasses: Record<ColorVariants, string> = {
   yellow: 'text-yellow',
 };
 
-const clipPathMap: Record<AnimateDirection, Record<'open' | 'close', string>> = {
+const THEMES = {
+  'brown-white': {
+    border: BORDER_VARIANTS['milk-white'],
+    background: BG_VARIANTS['mid-brown'],
+    color: TEXT_VARIANTS['milk-white'],
+  },
+};
+
+const layoutVariants = cva('w-fit', {
+  variants: {
+    tilt: {
+      '2-cw': 'rotate-2',
+      '2-ccw': '-rotate-2',
+      '3-cw': 'rotate-3',
+      '3-ccw': '-rotate-3',
+      '6-cw': 'rotate-6',
+      '6-ccw': '-rotate-6',
+    },
+    padding: {
+      small: 'p-[.2vw]',
+      normal: 'p-[.5vw]',
+    },
+  },
+  defaultVariants: {
+    padding: 'normal',
+  },
+});
+
+type ColorKey = keyof typeof BORDER_VARIANTS;
+type ThemeKey = keyof typeof THEMES;
+
+export interface AnimatedTitleProps {
+  title: string;
+  animateDirection: 'ltr' | 'rtl' | 'center';
+  variant?: ThemeKey;
+  color?: ColorKey;
+  background?: ColorKey;
+  border?: ColorKey;
+  overrideAnimation?: boolean;
+  animationEnd?: string;
+  paddingSmall?: boolean;
+  tilt?: '2-cw' | '2-ccw' | '3-cw' | '3-ccw' | '6-cw' | '6-ccw';
+  className?: string;
+  titleContainerClassName?: string;
+}
+
+const clipPathMap = {
   ltr: {
     open: 'polygon(0 0, 100% 0, 100% 100%, 0 100%)',
     close: 'polygon(0 0, 0 0, 0 100%, 0 100%)',
@@ -84,6 +106,7 @@ export default function AnimatedTitle({
   color,
   background,
   border,
+  variant,
   animateDirection,
   paddingSmall = false,
   overrideAnimation = false,
@@ -95,7 +118,7 @@ export default function AnimatedTitle({
   const animatedTitleRef = useRef<HTMLDivElement>(null);
 
   useGSAP(() => {
-    if (!overrideAnimation) {
+    if (!overrideAnimation && animatedTitleRef.current) {
       gsap.to(animatedTitleRef.current, {
         scrollTrigger: {
           trigger: animatedTitleRef.current,
@@ -107,24 +130,26 @@ export default function AnimatedTitle({
         clipPath: clipPathMap[animateDirection].open,
       });
     }
-  });
+  }, [animateDirection, overrideAnimation, animationEnd]);
+
+  const activeTheme = variant ? THEMES[variant] : null;
+  const finalBorder = activeTheme ? activeTheme.border : BORDER_VARIANTS[border as ColorKey];
+  const finalBg = activeTheme ? activeTheme.background : BG_VARIANTS[background as ColorKey];
+  const finalColor = activeTheme ? activeTheme.color : TEXT_VARIANTS[color as ColorKey];
 
   return (
     <div
       ref={animatedTitleRef}
-      style={{
-        clipPath: clipPathMap[animateDirection].close,
-      }}
+      style={{ clipPath: clipPathMap[animateDirection].close }}
       className={cn(
-        paddingSmall ? 'p-[.2vw]' : 'p-[.5vw]',
-        backgroundVariantClasses[border],
-        tilt && tiltMap[tilt],
+        layoutVariants({ padding: paddingSmall ? 'small' : 'normal', tilt }),
+        finalBorder,
         className,
       )}
     >
-      <div className={cn(`general-title ease-in-out`, backgroundVariantClasses[background])}>
+      <div className={cn('general-title ease-in-out', finalBg)}>
         <div className={cn('px-7 pt-1 pb-4 md:pb-5 2xl:pb-7', titleContainerClassName)}>
-          <h2 className={cn(colorVariantClasses[color], 'text-nowrap')}>{title}</h2>
+          <h2 className={cn(finalColor, 'text-nowrap')}>{title}</h2>
         </div>
       </div>
     </div>
