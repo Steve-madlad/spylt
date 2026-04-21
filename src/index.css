@@ -389,10 +389,10 @@
     }
 
     .nutrition-box {
-      @apply absolute left-1/2 -translate-x-1/2 px-0 lg:px-5 bottom-10 md:-bottom-70;
+      @apply absolute w-11/12 sm:w-auto left-1/2 -translate-x-1/2 px-0 lg:px-5 bottom-10 2xl:bottom-20;
 
       .list-wrapper {
-        @apply mx-auto flex max-w-7xl items-center justify-between rounded-full border-[.5vw] border-[#e8ddca] bg-[#fdebd2] px-2 py-2 md:px-5 md:py-2;
+        @apply mx-auto flex max-w-7xl items-center justify-between rounded-full border-[.5vw] border-[#e8ddca] bg-[#fdebd2] px-2 py-2 md:px-5 2xl:px-15 2xl:py-6 md:py-2;
 
         p {
           @apply text-[#865720];

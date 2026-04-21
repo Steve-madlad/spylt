@@ -7,7 +7,7 @@ import { useMediaQuery } from 'react-responsive';
 import AnimatedTitle from '../AnimatedTitle';
 
 export default function NutritionSection() {
-  const isMobile = useMediaQuery({ query: '(max-width: 768px)' });
+  const isMobile = useMediaQuery({ query: '(max-width: 640px)' });
   const [nutrientList, setNutrientList] = useState<Record<string, string>[]>(nutrientLists);
 
   useEffect(() => {
@@ -54,7 +54,7 @@ export default function NutritionSection() {
       <img src="/images/slider-dip.png" alt="waving backround" className="w-full object-cover" />
       <img src="/images/big-img.png" alt="spylt drink background" className="big-img" />
 
-      <div className="col-center mt-14 px-5 sm:justify-between md:mt-0 md:-translate-y-10 md:flex-row! md:px-10">
+      <div className="col-center sm:flex mt-14 px-5 sm:justify-between md:mt-0 md:-translate-y-10 md:flex-row! md:px-10">
         <div className="relative inline-block">
           <div className="general-title col-full-center relative gap-24">
             <div className="place-self-start overflow-hidden">
@@ -84,24 +84,25 @@ export default function NutritionSection() {
           </div>
         </div>
 
+      </div>
+
         <div className="nutrition-box">
           <div className="list-wrapper">
-            {nutrientLists.map((nutrient, index) => (
-              <div key={index} className="col-center min-w-30 px-3 lg:px-5 relative flex-1">
+            {nutrientList.map((nutrient, index) => (
+              <div key={index} className="col-center min-w-30 2xl:min-w-40 px-3 lg:px-5 relative flex-1">
                 <div>
-                  <p className="font-paragraph text-base lg:text-lg">{nutrient.label}</p>
-                  <p className="font-paragraph mt-1 text-sm">up to</p>
-                  <p className="text-base lg:text-xl font-bold tracking-tighter">
+                  <p className="font-paragraph text-base lg:text-lg 2xl:text-2xl">{nutrient.label}</p>
+                  <p className="font-paragraph mt-1 text-sm 2xl:text-lg">up to</p>
+                  <p className="text-base lg:text-xl 2xl:text-4xl font-bold tracking-tighter">
                     {nutrient.amount}
                   </p>
                 </div>
 
-                {index !== nutrientLists.length - 1 && <div className="spacer-border" />}
+                {index !== nutrientList.length - 1 && <div className="spacer-border" />}
               </div>
             ))}
           </div>
         </div>
-      </div>
     </section>
   );
 }
