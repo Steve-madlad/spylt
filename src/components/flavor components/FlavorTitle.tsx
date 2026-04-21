@@ -89,7 +89,7 @@ export default function FlavorTitle() {
         className="flavor-text-scroll"
         animateDirection="ltr"
         title="Exquisitely"
-        variant='brown-white'
+        variant="brown-white"
         overrideAnimation
         paddingSmall
       />

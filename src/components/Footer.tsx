@@ -7,7 +7,7 @@ const FooterSection = () => {
   return (
     <footer className="footer-section">
       <img src="/images/footer-dip.png" alt="waving background" />
-      <h2 className="text-milk mt-10 text-center text-5xl font-bold tracking-tight uppercase sm:text-7xl md:mt-15 lg:mt-0 md:text-8xl">
+      <h2 className="text-milk mt-10 text-center text-5xl font-bold tracking-tight uppercase sm:text-7xl md:mt-15 md:text-8xl lg:mt-0">
         #chugresponsibly
       </h2>
 

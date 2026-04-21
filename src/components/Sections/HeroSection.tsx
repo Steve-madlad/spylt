@@ -91,7 +91,7 @@ export default function Hero() {
 
           <AnimatedTitle
             animateDirection="center"
-            variant='brown-white'
+            variant="brown-white"
             tilt="3-ccw"
             title="Protien * Caffine"
             className="hero-text-scroll mb-8"
