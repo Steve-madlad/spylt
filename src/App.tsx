@@ -1,4 +1,4 @@
-// import { useGSAP } from '@gsap/react';
+import { useGSAP } from '@gsap/react';
 import BenefitSection from '@/components/sections/BenefitSection';
 import FlavorSection from '@sections/FlavorsSection';
 import HeroSection from '@sections/HeroSection';
@@ -12,12 +12,12 @@ import Navbar from './components/Navbar';
 
 gsap.registerPlugin(ScrollTrigger, ScrollSmoother);
 export default function App() {
-  // useGSAP(() => {
-  //   ScrollSmoother.create({
-  //     smooth: 3,
-  //     effects: true,
-  //   });
-  // });
+  useGSAP(() => {
+    ScrollSmoother.create({
+      smooth: 3,
+      effects: true,
+    });
+  });
 
   return (
     <main>
