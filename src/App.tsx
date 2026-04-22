@@ -3,7 +3,7 @@ import gsap from 'gsap';
 import { ScrollSmoother, ScrollTrigger } from 'gsap/all';
 import Footer from './components/Footer';
 import Navbar from './components/Navbar';
-import BenefitSection from './components/sections/BenefitSection.tsx';
+import BenefitSection from  '@comps/sections/BenefitSection.tsx'
 import FlavorSection from './components/sections/FlavorsSection.tsx';
 import HeroSection from './components/sections/HeroSection.tsx';
 import MessageSection from './components/sections/MessageSection.tsx';
