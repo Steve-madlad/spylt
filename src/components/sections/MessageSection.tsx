@@ -19,20 +19,19 @@ export default function MessageSection() {
       scrollTrigger: {
         trigger: '.first-message',
         start: 'top 80%',
-        end: 'bottom center',
+        end: 'bottom 60%',
         scrub: true,
       },
       color: 'var(--milk)',
       ease: 'power1.in',
-      stagger: 0.1,
+      stagger: 0.15,
     });
 
     gsap.to('.msg-text-scroll', {
       scrollTrigger: {
         trigger: '.msg-text-scroll',
         start: 'top 70%',
-        end: 'bottom 75%',
-        scrub: true,
+        toggleActions: 'play none play reverse'
       },
       clipPath: 'polygon(0% 0%,100% 0%,100% 100%,0% 100%)',
       duration: 1,
@@ -42,13 +41,13 @@ export default function MessageSection() {
     gsap.to(secondSplit.words, {
       scrollTrigger: {
         trigger: '.second-message',
-        start: 'top 90%',
+        start: 'top 80%',
         end: 'bottom center',
         scrub: true,
       },
       color: 'var(--milk)',
       ease: 'power1.in',
-      stagger: 0.01,
+      stagger: 0.15,
     });
 
     gsap.from(paragraphSlit.words, {
