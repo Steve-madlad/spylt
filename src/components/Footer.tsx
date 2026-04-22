@@ -104,7 +104,7 @@ const FooterSection = () => {
 
           <ul className="flex gap-4">
             <li className="hover:text-light-brown cursor hover:underline">Privacy Policy</li>
-            <b className="sm:hidden">•</b>
+            <li className="sm:hidden">•</li>
             <li className="hover:text-light-brown cursor hover:underline">Terms of Service</li>
           </ul>
         </div>

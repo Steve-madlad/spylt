@@ -9,6 +9,7 @@
 @font-face {
   font-family: 'ProximaNova, sans-serif';
   src: url('/fonts/ProximaNova-Regular.otf');
+  font-display: swap;
 }
 
 @layer utilities {
