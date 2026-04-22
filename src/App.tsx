@@ -1,4 +1,4 @@
-import { useGSAP } from '@gsap/react';
+// import { useGSAP } from '@gsap/react';
 import BenefitSection from '@/components/sections/BenefitSection';
 import FlavorSection from '@sections/FlavorsSection';
 import HeroSection from '@sections/HeroSection';
