@@ -6,13 +6,13 @@ import { Input } from './ui/input';
 const FooterSection = () => {
   return (
     <footer className="footer-section">
-      <img src="/images/footer-dip.png" alt="waving background" />
-      <h2 className="text-milk mt-10 text-center text-5xl font-bold tracking-tight uppercase sm:text-7xl md:mt-15 md:text-8xl lg:mt-0">
+      <img src="/images/optimized/footer-dip.webp" alt="waving background" />
+      <h2 className="text-milk relative z-10 mt-10 text-center text-5xl font-bold tracking-tight uppercase sm:text-7xl md:mt-15 md:text-8xl lg:mt-0">
         #chugresponsibly
       </h2>
 
       <div className="relative px-8 pb-5">
-        <div className="just-end mb-40 gap-6 pt-20 sm:justify-center!">
+        <div className="just-end sm:justify-center! relative z-10 mb-40 gap-6 pt-20">
           <Button className="cursor hover:bg-mid-brown flex-center border-milk size-15 rounded-full border bg-transparent">
             <img src="/images/tiktok.svg" alt="tiktok" />
           </Button>
@@ -74,8 +74,8 @@ const FooterSection = () => {
             muted
           />
           <img
-            className="pointer-events-none absolute top-0 block w-1/2 max-w-64.25 object-cover sm:top-40 sm:right-4 sm:max-w-max sm:-scale-x-[1] md:hidden"
-            src="/images/footer-drink.png"
+            className="pointer-events-none absolute -top-30 z-0 block w-1/2 min-w-80 object-cover sm:top-40 sm:right-4 sm:max-w-max sm:-scale-x-[1] md:hidden"
+            src="/images/optimized/footer-drink.webp"
             alt="spylt drink"
           />
 

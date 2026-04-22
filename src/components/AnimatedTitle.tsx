@@ -119,6 +119,21 @@ export default function AnimatedTitle({
 
   useGSAP(() => {
     if (!overrideAnimation && animatedTitleRef.current) {
+      const mm = gsap.matchMedia();
+
+      mm.add('(max-width: 640px)', () => {
+        gsap.to(animatedTitleRef.current, {
+          scrollTrigger: {
+            trigger: animatedTitleRef.current,
+            start: 'top 20%',
+            end: animationEnd,
+            toggleActions: 'play none none reverse',
+          },
+          ease: 'power1.inOut',
+          clipPath: clipPathMap[animateDirection].open,
+        });
+      });
+
       gsap.to(animatedTitleRef.current, {
         scrollTrigger: {
           trigger: animatedTitleRef.current,

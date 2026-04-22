@@ -63,15 +63,16 @@ export default function Hero() {
         {isTablet ? (
           <>
             <img
-              src="/images/hero-bg.png"
+              src="/images/optimized/hero-bg.webp"
               className="absolute size-full object-cover"
               alt="spylt drinks"
             />
 
             <img
-              src="/images/hero-img.png"
+              src="/images/optimized/hero-img.webp"
               className="abs-center-x object-auto bottom-0"
               alt="spylt drinks"
+              fetchPriority='high'
             />
           </>
         ) : (
@@ -79,6 +80,7 @@ export default function Hero() {
             autoPlay
             playsInline
             muted
+            
             className="absolute inset-0 size-full object-cover"
             src="/videos/hero-bg.mp4"
           />
