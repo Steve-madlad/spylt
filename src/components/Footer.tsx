@@ -6,21 +6,26 @@ import { Input } from './ui/input';
 const FooterSection = () => {
   return (
     <footer className="footer-section">
-      <img src="/images/optimized/footer-dip.webp" alt="waving background" />
+      <img
+        width="100%"
+        height={195}
+        src="/images/optimized/footer-dip.webp"
+        alt="wavy background"
+      />
       <h2 className="text-milk relative z-10 mt-10 text-center text-5xl font-bold tracking-tight uppercase sm:text-7xl md:mt-15 md:text-8xl lg:mt-0">
         #chugresponsibly
       </h2>
 
       <div className="relative px-8 pb-5">
-        <div className="just-end sm:justify-center! relative z-10 mb-40 gap-6 pt-20">
+        <div className="just-end relative z-10 mb-40 gap-6 pt-20 sm:justify-center!">
           <Button className="cursor hover:bg-mid-brown flex-center border-milk size-15 rounded-full border bg-transparent">
-            <img src="/images/tiktok.svg" alt="tiktok" />
+            <img width={38.4} height={38.4} src="/images/tiktok.svg" alt="tiktok" />
           </Button>
           <Button className="cursor hover:bg-mid-brown flex-center border-milk size-15 rounded-full border bg-transparent">
-            <img src="/images/insta.svg" alt="instagram" />
+            <img width={38.4} height={38.4} src="/images/insta.svg" alt="instagram" />
           </Button>
           <Button className="cursor hover:bg-mid-brown flex-center border-milk size-15 rounded-full border bg-transparent">
-            <img src="/images/yt.svg" alt="youtube" />
+            <img width={38.4} height={38.4} src="/images/yt.svg" alt="youtube" />
           </Button>
         </div>
 
