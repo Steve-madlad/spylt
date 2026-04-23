@@ -70,13 +70,13 @@ export default function Hero() {
     });
   });
   return (
-    <section className="bg-main-bg ">
+    <section className="bg-main-bg">
       <div className="hero-container">
         {isTablet ? (
           <>
             <img
               src="/images/optimized/hero-bg.webp"
-              className="background-image absolute size-full sm:size-[120%] object-cover"
+              className="background-image absolute size-full object-cover sm:size-[120%]"
               alt="spylt drinks"
             />
 

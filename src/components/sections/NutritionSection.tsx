@@ -53,11 +53,11 @@ export default function NutritionSection() {
       scrollTrigger: {
         trigger: '.nutrition-section',
         start: 'bottom bottom',
-        toggleActions: 'play none none reverse'
+        toggleActions: 'play none none reverse',
       },
       yPercent: 200,
       ease: 'back.out(1.7)',
-    })
+    });
   });
   return (
     <section className="nutrition-section">

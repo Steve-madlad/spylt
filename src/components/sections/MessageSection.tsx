@@ -31,7 +31,7 @@ export default function MessageSection() {
       scrollTrigger: {
         trigger: '.msg-text-scroll',
         start: 'top 70%',
-        toggleActions: 'play none play reverse'
+        toggleActions: 'play none play reverse',
       },
       clipPath: 'polygon(0% 0%,100% 0%,100% 100%,0% 100%)',
       duration: 1,

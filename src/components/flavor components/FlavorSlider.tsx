@@ -266,7 +266,7 @@ export default function FlavorSlider() {
           return (
             <div
               key={i}
-              className={`card relative z-30 h-80 max-w-136.5 md:max-w-6xl w-[90vw] flex-none md:h-[50vh] md:w-[90vh] lg:h-[70vh] lg:w-[50vw] ${flavor.rotation}`}
+              className={`card relative z-30 h-80 w-[90vw] max-w-136.5 flex-none md:h-[50vh] md:w-[90vh] md:max-w-6xl lg:h-[70vh] lg:w-[50vw] ${flavor.rotation}`}
             >
               <img
                 src={`/images/${flavor.color}-bg.svg`}
