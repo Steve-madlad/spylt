@@ -9,7 +9,7 @@ const FooterSection = () => {
       <img
         width="100%"
         height={195}
-        src="/images/optimized/footer-dip.webp"
+        src="/images/footer-dip.webp"
         alt="wavy background"
       />
       <h2 className="text-milk relative z-10 mt-10 text-center text-5xl font-bold tracking-tight uppercase sm:text-7xl md:mt-15 md:text-8xl lg:mt-0">
@@ -80,7 +80,7 @@ const FooterSection = () => {
           />
           <img
             className="pointer-events-none absolute -top-30 z-0 block w-1/2 min-w-80 object-cover sm:top-40 sm:right-4 sm:max-w-max sm:-scale-x-[1] md:hidden"
-            src="/images/optimized/footer-drink.webp"
+            src="/images/footer-drink.webp"
             alt="spylt drink"
           />
 

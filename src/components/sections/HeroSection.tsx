@@ -75,13 +75,13 @@ export default function Hero() {
         {isTablet ? (
           <>
             <img
-              src="/images/optimized/hero-bg.webp"
+              src="/images/hero-bg.webp"
               className="background-image absolute size-full object-cover sm:size-[120%]"
               alt="spylt drinks"
             />
 
             <img
-              src="/images/optimized/hero-img.webp"
+              src="/images/hero-img.webp"
               className="abs-center-x object-auto bottom-0"
               alt="spylt drinks"
               fetchPriority="high"

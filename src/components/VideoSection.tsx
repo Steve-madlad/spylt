@@ -28,7 +28,7 @@ export default function VideoSection() {
         <video src="/videos/pin-video.mp4" muted loop autoPlay playsInline />
         <div className="abs-center scale-200 md:scale-100">
           <img
-            src="/images/optimized/chug-spylt.webp"
+            src="/images/chug-spylt.webp"
             alt="circle text"
             className="animate-spin-circle"
           />
@@ -36,7 +36,7 @@ export default function VideoSection() {
             <img
               width={80}
               height={80}
-              src="/images/optimized/spylt-drink.webp"
+              src="/images/spylt-drink.webp"
               alt="soda"
               className="size-[5vw]"
             />

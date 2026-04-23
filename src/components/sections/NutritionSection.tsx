@@ -62,13 +62,13 @@ export default function NutritionSection() {
   return (
     <section className="nutrition-section">
       <img
-        src="/images/optimized/slider-dip.webp"
+        src="/images/slider-dip.webp"
         alt="wavy backround"
         width="100%"
         height={195}
         className="w-full object-cover"
       />
-      <img src="/images/optimized/big-img.webp" alt="spylt drink background" className="big-img" />
+      <img src="/images/big-img.webp" alt="spylt drink background" className="big-img" />
 
       <div className="col-center mt-14 px-5 sm:flex sm:justify-between md:mt-0 md:-translate-y-10 md:flex-row! md:px-10">
         <div className="relative inline-block">
