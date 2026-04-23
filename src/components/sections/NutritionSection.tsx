@@ -42,12 +42,22 @@ export default function NutritionSection() {
     gsap.to('.nutrition-text-scroll', {
       scrollTrigger: {
         trigger: '.nutrition-text-scroll',
-        start: 'bottom bottom',
+        start: 'bottom 100%',
       },
       ease: 'power1.inOut',
       opacity: 1,
       clipPath: 'polygon(0 0, 100% 0, 100% 100%, 0 100% )',
     });
+
+    gsap.from('.nutrition-box', {
+      scrollTrigger: {
+        trigger: '.nutrition-section',
+        start: 'bottom bottom',
+        toggleActions: 'play none none reverse'
+      },
+      yPercent: 200,
+      ease: 'back.out(1.7)',
+    })
   });
   return (
     <section className="nutrition-section">
@@ -99,7 +109,7 @@ export default function NutritionSection() {
               <div>
                 <p className="font-paragraph text-base lg:text-lg 2xl:text-2xl">{nutrient.label}</p>
                 <p className="font-paragraph mt-1 text-sm 2xl:text-lg">up to</p>
-                <p className="text-base font-bold tracking-tighter lg:text-xl 2xl:text-4xl">
+                <p className="text-base font-bold tracking-tighter lg:text-2xl 2xl:text-4xl">
                   {nutrient.amount}
                 </p>
               </div>

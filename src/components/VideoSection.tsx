@@ -1,7 +1,5 @@
-
 import { useGSAP } from '@gsap/react';
 import gsap from 'gsap';
-import { Play } from 'lucide-react';
 import { useMediaQuery } from 'react-responsive';
 
 export default function VideoSection() {
@@ -29,9 +27,19 @@ export default function VideoSection() {
       <div className="video-box size-full" style={{ clipPath: 'circle(6% at 50% 50%)' }}>
         <video src="/videos/pin-video.mp4" muted loop autoPlay playsInline />
         <div className="abs-center scale-200 md:scale-100">
-          <img src="/images/optimized/chug-spylt.webp" alt="circle text" className="animate-spin-circle" />
+          <img
+            src="/images/optimized/chug-spylt.webp"
+            alt="circle text"
+            className="animate-spin-circle"
+          />
           <div className="play-btn">
-            <Play fill="white" color="white" className="ml-[.5vw] size-[3vw]" />
+            <img
+              width={80}
+              height={80}
+              src="/images/optimized/spylt-drink.webp"
+              alt="soda"
+              className="size-[5vw]"
+            />
           </div>
         </div>
       </div>

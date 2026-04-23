@@ -19,6 +19,7 @@ export default function FlavorTitle() {
         scrollTrigger: {
           trigger: '.flavor-section',
           start: 'top 60%',
+          toggleActions: 'play none none reverse',
         },
         yPercent: 200,
         stagger: 0.02,
@@ -29,6 +30,7 @@ export default function FlavorTitle() {
         scrollTrigger: {
           trigger: '.flavor-section',
           start: 'top 53%',
+          toggleActions: 'play none none reverse',
         },
         ease: 'power1.inOut',
         clipPath: 'polygon(0 0,100% 0,100% 100%,0 100%)',
@@ -38,6 +40,7 @@ export default function FlavorTitle() {
         scrollTrigger: {
           trigger: '.flavor-section',
           start: 'top 48%',
+          toggleActions: 'play none none reverse',
         },
         yPercent: 200,
         stagger: 0.02,
@@ -50,6 +53,7 @@ export default function FlavorTitle() {
         scrollTrigger: {
           trigger: '.flavor-section',
           start: 'top 55%',
+          toggleActions: 'play none none reverse',
         },
         yPercent: 200,
         stagger: 0.02,
@@ -60,6 +64,7 @@ export default function FlavorTitle() {
         scrollTrigger: {
           trigger: '.flavor-section',
           start: 'top 35%',
+          toggleActions: 'play none none reverse',
         },
         ease: 'power1.inOut',
         clipPath: 'polygon(0 0,100% 0,100% 100%,0 100%)',
@@ -69,6 +74,7 @@ export default function FlavorTitle() {
         scrollTrigger: {
           trigger: '.flavor-section',
           start: 'top 28%',
+          toggleActions: 'play none none reverse',
         },
         yPercent: 200,
         stagger: 0.02,

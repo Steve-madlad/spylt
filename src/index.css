@@ -142,6 +142,7 @@
   --radius-2xl: calc(var(--radius) * 1.8);
   --radius-3xl: calc(var(--radius) * 2.2);
   --radius-4xl: calc(var(--radius) * 2.6);
+  --breakpoint-xxs: 500px;
 }
 
 :root {
@@ -356,7 +357,7 @@
       @apply mt-0 min-h-dvh w-full md:mt-20 md:min-h-fit lg:mt-0 lg:h-dvh;
 
       .flavors {
-        @apply flex h-full w-full flex-col flex-nowrap items-center gap-7 md:flex-row md:gap-24 lg:gap-30 2xl:gap-40;
+        @apply flex h-full w-full flex-col flex-nowrap items-center gap-7 xxs:gap-20 md:flex-row md:gap-24 lg:gap-30 2xl:gap-40;
 
         .drinks {
           @apply absolute bottom-0 left-1/2 h-80 -translate-x-1/2 md:h-full;

@@ -56,15 +56,27 @@ export default function Hero() {
       yPercent: 30,
       ease: 'power1.inOut',
     });
+
+    gsap.to('.background-image', {
+      scrollTrigger: {
+        trigger: '.hero-container',
+        start: '1% top',
+        end: 'bottom top',
+        scrub: true,
+      },
+      delay: 2,
+      yPercent: -40,
+      ease: 'power1.inOut',
+    });
   });
   return (
-    <section className="bg-main-bg overflow-hidden">
+    <section className="bg-main-bg ">
       <div className="hero-container">
         {isTablet ? (
           <>
             <img
               src="/images/optimized/hero-bg.webp"
-              className="absolute size-full object-cover"
+              className="background-image absolute size-full sm:size-[120%] object-cover"
               alt="spylt drinks"
             />
 
@@ -72,7 +84,7 @@ export default function Hero() {
               src="/images/optimized/hero-img.webp"
               className="abs-center-x object-auto bottom-0"
               alt="spylt drinks"
-              fetchPriority='high'
+              fetchPriority="high"
             />
           </>
         ) : (
@@ -80,7 +92,6 @@ export default function Hero() {
             autoPlay
             playsInline
             muted
-            
             className="absolute inset-0 size-full object-cover"
             src="/videos/hero-bg.mp4"
           />
