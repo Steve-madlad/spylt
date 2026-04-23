@@ -6,12 +6,7 @@ import { Input } from './ui/input';
 const FooterSection = () => {
   return (
     <footer className="footer-section">
-      <img
-        width="100%"
-        height={195}
-        src="/images/footer-dip.webp"
-        alt="wavy background"
-      />
+      <img width="100%" height={195} src="/images/footer-dip.webp" alt="wavy background" />
       <h2 className="text-milk relative z-10 mt-10 text-center text-5xl font-bold tracking-tight uppercase sm:text-7xl md:mt-15 md:text-8xl lg:mt-0">
         #chugresponsibly
       </h2>
