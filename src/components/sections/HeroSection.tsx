@@ -1,27 +1,67 @@
 import { useGSAP } from '@gsap/react';
 import gsap from 'gsap';
 import { ScrollSmoother, SplitText } from 'gsap/all';
+import { useEffect, useRef } from 'react';
 import { useMediaQuery } from 'react-responsive';
 import AnimatedTitle from '../AnimatedTitle';
 import { Button } from '../ui/button';
 
-export default function Hero() {
+const splashDelay = 0.6;
+export default function Hero({ isReady }: { isReady: boolean }) {
   const isTablet = useMediaQuery({ query: '(max-width: 1024px)' });
+  const videoRef = useRef<HTMLVideoElement>(null);
+
+  useEffect(() => {
+    let timeout: number;
+    if (videoRef.current) {
+      timeout = setTimeout(() => {
+        videoRef.current?.play();
+      }, splashDelay * 1000);
+    }
+
+    return () => {
+      clearTimeout(timeout);
+    };
+  }, [videoRef.current, isReady]);
 
   useGSAP(() => {
+    if (!isReady) return;
     const textSplit = SplitText.create('.hero-title', {
       type: 'chars',
     });
 
-    const tl = gsap.timeline({
-      delay: isTablet ? 0.4 : 1.2,
+    const contentTl = gsap.timeline({
+      delay: (isTablet ? 0.4 : 1.2) + splashDelay,
     });
 
-    tl.to('.hero-content', {
-      opacity: 1,
-      y: 0,
-      ease: 'power1.inOut',
-    })
+    const imageTl = gsap.timeline({
+      delay: 0.4 + splashDelay,
+    });
+
+    imageTl
+      .from('.hero-image-wrapper', {
+        y: 100,
+        opacity: 0,
+        duration: 1,
+        ease: 'power2.out',
+      })
+      .from(
+        '.mobile-image',
+        {
+          opacity: 0,
+          duration: 0.8,
+          yPercent: 30,
+          ease: 'power1.inOut',
+        },
+        0,
+      );
+
+    contentTl
+      .to('.hero-content', {
+        opacity: 1,
+        y: 0,
+        ease: 'power1.inOut',
+      })
       .to(
         '.hero-text-scroll',
         {
@@ -64,34 +104,38 @@ export default function Hero() {
         end: 'bottom top',
         scrub: true,
       },
+      overwrite: 'auto',
       delay: 2,
       yPercent: -40,
       ease: 'power1.inOut',
     });
-  });
+  }, [isReady]);
+
   return (
     <section className="bg-main-bg">
       <div className="hero-container">
         {isTablet ? (
           <>
-            <img
-              src="/images/hero-bg.webp"
-              className="background-image absolute size-full object-cover sm:size-[120%]"
-              alt="spylt drinks"
-            />
+            <div className="hero-image-wrapper absolute size-full">
+              <img
+                src="/images/hero-bg.webp"
+                className="background-image size-full object-cover sm:size-[120%]"
+                alt="spylt drinks"
+              />
+            </div>
 
             <img
               src="/images/hero-img.webp"
-              className="abs-center-x object-auto bottom-0"
+              className="mobile-image abs-center-x object-auto bottom-0"
               alt="spylt drinks"
               fetchPriority="high"
             />
           </>
         ) : (
           <video
-            autoPlay
             playsInline
             muted
+            ref={videoRef}
             className="absolute inset-0 size-full object-cover"
             src="/videos/hero-bg.mp4"
           />
