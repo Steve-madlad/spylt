@@ -6,7 +6,7 @@ import { useMediaQuery } from 'react-responsive';
 import AnimatedTitle from '../AnimatedTitle';
 import { Button } from '../ui/button';
 
-const splashDelay = 0.6;
+const splashDelay = 1;
 export default function Hero({ isReady }: { isReady: boolean }) {
   const isTablet = useMediaQuery({ query: '(max-width: 1024px)' });
   const videoRef = useRef<HTMLVideoElement>(null);

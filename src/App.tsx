@@ -40,6 +40,10 @@ export default function App() {
       loadedCount++;
       const targetPercent = Math.round((loadedCount / total) * 100);
 
+      if (loadedCount === total) {
+        setIsFinished(true);
+      }
+
       gsap.to(progressProxy, {
         value: targetPercent,
         duration: 0.8,
@@ -59,7 +63,6 @@ export default function App() {
     };
 
     const handleExit = () => {
-      setIsFinished(true);
       const tl = gsap.timeline({
         onComplete: () => {
           smoother.current?.paused(false);
@@ -69,24 +72,25 @@ export default function App() {
       tl.to('#splash-screen', {
         yPercent: -100,
         y: -150,
-        delay: 0.2, 
+        delay: 0.2,
         duration: 1.2,
         ease: 'sine.inOut',
       }).set('#splash-screen', {
         display: 'none',
       });
     };
+    
     criticalAssets.forEach((url) => {
       if (url.endsWith('.mp4')) {
         const v = document.createElement('video');
         v.src = url;
         v.oncanplaythrough = updateProgress;
-        v.load(); // Force start loading
+        v.load();
       } else {
         const img = new Image();
         img.src = url;
         img.onload = updateProgress;
-        img.onerror = updateProgress; // Avoid getting stuck if an image fails
+        img.onerror = updateProgress;
       }
     });
   }, [isMobile]);
@@ -97,7 +101,7 @@ export default function App() {
         <div className="bg-red-brown col-full-center h-screen gap-2">
           <img src="/images/splash-logo.svg" width={200} className="w-50" alt="spylt logo" />
           <p className="text-milk text-4xl font-bold uppercase">{percentage}%</p>
-          <div className="h-2 w-60 overflow-hidden rounded-full bg-milk/20">
+          <div className="bg-milk/20 h-2 w-60 overflow-hidden rounded-full">
             <div className="bg-milk h-full w-0" id="progress-bar"></div>
           </div>
         </div>
