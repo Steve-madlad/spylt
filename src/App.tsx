@@ -79,7 +79,7 @@ export default function App() {
         display: 'none',
       });
     };
-    
+
     criticalAssets.forEach((url) => {
       if (url.endsWith('.mp4')) {
         const v = document.createElement('video');
@@ -99,7 +99,8 @@ export default function App() {
     <main>
       <div id="splash-screen" className="col fixed top-0 z-100 flex w-full">
         <div className="bg-red-brown col-full-center h-screen gap-2">
-          <img src="/images/splash-logo.svg" width={200} className="w-50" alt="spylt logo" />
+          <img src="/images/splash-logo.svg" width={200} height={120} className="w-50" alt="spylt logo" />
+          
           <p className="text-milk text-4xl font-bold uppercase">{percentage}%</p>
           <div className="bg-milk/20 h-2 w-60 overflow-hidden rounded-full">
             <div className="bg-milk h-full w-0" id="progress-bar"></div>
