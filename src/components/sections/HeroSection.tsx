@@ -126,6 +126,8 @@ export default function Hero({ isReady }: { isReady: boolean }) {
 
             <img
               src="/images/hero-img.webp"
+              width={370}
+              height={410}
               className="mobile-image abs-center-x object-auto bottom-0"
               alt="spylt drinks"
               fetchPriority="high"

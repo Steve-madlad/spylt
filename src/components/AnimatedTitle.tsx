@@ -125,7 +125,7 @@ export default function AnimatedTitle({
         gsap.to(animatedTitleRef.current, {
           scrollTrigger: {
             trigger: animatedTitleRef.current,
-            start: 'top 20%',
+            start: 'top 60%',
             end: animationEnd,
             toggleActions: 'play none none reverse',
           },
@@ -134,15 +134,17 @@ export default function AnimatedTitle({
         });
       });
 
-      gsap.to(animatedTitleRef.current, {
-        scrollTrigger: {
-          trigger: animatedTitleRef.current,
-          start: 'bottom 90%',
-          end: animationEnd,
-          toggleActions: 'play none none reverse',
-        },
-        ease: 'power1.inOut',
-        clipPath: clipPathMap[animateDirection].open,
+      mm.add('(min-width: 641px)', () => {
+        gsap.to(animatedTitleRef.current, {
+          scrollTrigger: {
+            trigger: animatedTitleRef.current,
+            start: 'bottom 90%',
+            end: animationEnd,
+            toggleActions: 'play none none reverse',
+          },
+          ease: 'power1.inOut',
+          clipPath: clipPathMap[animateDirection].open,
+        });
       });
     }
   }, [animateDirection, overrideAnimation, animationEnd]);

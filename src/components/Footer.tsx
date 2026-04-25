@@ -74,7 +74,7 @@ const FooterSection = () => {
             muted
           />
           <img
-            className="pointer-events-none absolute -top-30 z-0 block w-1/2 min-w-80 object-cover sm:top-40 sm:right-4 sm:max-w-max sm:-scale-x-[1] md:hidden"
+            className="pointer-events-none absolute -top-30 z-0 block w-3/5 left-1 sm:left-auto min-w-80 object-cover sm:top-40 sm:right-4 sm:max-w-max sm:-scale-x-[1] md:hidden"
             src="/images/footer-drink.webp"
             alt="spylt drink"
           />
