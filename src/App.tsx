@@ -13,6 +13,13 @@ import Footer from './components/Footer';
 import Navbar from './components/Navbar';
 
 gsap.registerPlugin(ScrollTrigger, ScrollSmoother);
+ScrollTrigger.config({
+  ignoreMobileResize: true,
+});
+
+if (ScrollTrigger.isTouch === 1) {
+  ScrollTrigger.normalizeScroll(true);
+}
 export default function App() {
   const [isFinished, setIsFinished] = useState(false);
   const [percentage, setPercentage] = useState(0);
@@ -21,14 +28,6 @@ export default function App() {
   const isMobile = useMediaQuery({ query: '(max-width: 768px)' });
 
   useGSAP(() => {
-    ScrollTrigger.config({
-      ignoreMobileResize: true,
-    });
-
-    if (ScrollTrigger.isTouch === 1) {
-      ScrollTrigger.normalizeScroll(true);
-    }
-
     smoother.current = ScrollSmoother.create({
       smooth: isMobile ? 2.5 : 3,
       effects: true,
@@ -44,13 +43,20 @@ export default function App() {
     let loadedCount = 0;
     const total = criticalAssets.length;
     const progressProxy = { value: 0 };
+    let finishedTimeout: ReturnType<typeof setTimeout> | undefined;
 
     const updateProgress = () => {
       loadedCount++;
       const targetPercent = Math.round((loadedCount / total) * 100);
 
       if (loadedCount === total) {
-        setIsFinished(true);
+        if (finishedTimeout) {
+          clearTimeout(finishedTimeout);
+        }
+
+        finishedTimeout = setTimeout(() => {
+          setIsFinished(true);
+        }, 1000);
       }
 
       gsap.to(progressProxy, {
@@ -102,6 +108,12 @@ export default function App() {
         img.onerror = updateProgress;
       }
     });
+
+    return () => {
+      if (finishedTimeout) {
+        clearTimeout(finishedTimeout);
+      }
+    };
   }, [isMobile]);
 
   return (
