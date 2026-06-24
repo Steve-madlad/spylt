@@ -114,7 +114,7 @@ export default function Hero({ isReady }: { isReady: boolean }) {
   return (
     <section className="bg-main-bg">
       <div className="hero-container">
-        {/* {isTablet ? (
+        {isTablet ? (
           <>
             <div className="hero-image-wrapper absolute size-full">
               <img
@@ -134,14 +134,16 @@ export default function Hero({ isReady }: { isReady: boolean }) {
             />
           </>
         ) : (
-          <video
-            playsInline
-            muted
-            ref={videoRef}
-            className="absolute inset-0 size-full object-cover"
-            src="/videos/hero-bg.mp4"
-          />
-        )} */}
+          isReady && (
+            <video
+              playsInline
+              muted
+              ref={videoRef}
+              className="absolute inset-0 size-full object-cover"
+              src="/videos/hero-bg.mp4"
+            />
+          )
+        )}
 
         <div className="hero-content opacity-0">
           <div className="overflow-hidden">
